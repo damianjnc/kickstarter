@@ -16,6 +16,7 @@ class CampaignShow extends Component{
       address: props.query.address,
       minimumContribution: summary[0],
       balance: summary[1],
+      requestsCount: summary[2],
       approversCount:summary[3],
       manager: summary[4]
     };
