@@ -11,13 +11,17 @@ class CampaignShow extends Component{
 
     const campaign = Campaign(props.query.address);
     const summary = await campaign.methods.getSummary().call();
+    const summary2 = await campaign.methods.minimumContribution().call();
+    const requestsCount = await campaign.methods.getRequestsCount().call();
+    const approversCount = await campaign.methods.approversCount().call();
+    const manager = await campaign.methods.manager().call();
 
     return{
       address: props.query.address,
-      minimumContribution: summary[0],
-      balance: summary[1],
-      requestsCount: summary[2],
-      approversCount:summary[3],
+      minimumContribution: summary2.toString(),
+      balance: summary[1].toString(),
+      requestsCount: requestsCount.toString(),
+      approversCount:approversCount.toString(),
       manager: summary[4]
     };
   }

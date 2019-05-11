@@ -34,7 +34,7 @@ class ContributeForm extends Component{
     return(
   <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
         <Form.Field>
-          <label>Amount to Contribute</label>
+            <label>Amount to Contribute<p><small>You need to be logged into your MetaMask account</small></p></label>
           <Input value={this.state.value} onChange={event => this.setState({value: event.target.value})} label="ether" labelPosition="right" />
         </Form.Field>
         <Message error header="Oops!" content={this.state.errorMessage} />
